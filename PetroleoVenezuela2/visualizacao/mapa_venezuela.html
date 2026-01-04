@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_adeaa6b9968f3923f0a3f038cd275219 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_adeaa6b9968f3923f0a3f038cd275219" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_adeaa6b9968f3923f0a3f038cd275219 = L.map(
+                "map_adeaa6b9968f3923f0a3f038cd275219",
+                {
+                    center: [8.0, -66.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f19321da11f4322915090a6f871815c1 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f19321da11f4322915090a6f871815c1.addTo(map_adeaa6b9968f3923f0a3f038cd275219);
+        
+    
+        function geo_json_35985c2d216162a3d4227be213fcc6a5_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#1f77b4", "fillColor": "#1f77b4", "fillOpacity": 0.4};
+            }
+        }
+
+        function geo_json_35985c2d216162a3d4227be213fcc6a5_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_35985c2d216162a3d4227be213fcc6a5 = L.geoJson(null, {
+                onEachFeature: geo_json_35985c2d216162a3d4227be213fcc6a5_onEachFeature,
+            
+                style: geo_json_35985c2d216162a3d4227be213fcc6a5_styler,
+            ...{
+}
+        });
+
+        function geo_json_35985c2d216162a3d4227be213fcc6a5_add (data) {
+            geo_json_35985c2d216162a3d4227be213fcc6a5
+                .addData(data);
+        }
+            geo_json_35985c2d216162a3d4227be213fcc6a5_add({"bbox": [-73.0, 9.0, -70.5, 11.5], "features": [{"bbox": [-73.0, 9.0, -70.5, 11.5], "geometry": {"coordinates": [[[-72.5, 11.5], [-71.0, 11.5], [-70.5, 9.0], [-73.0, 9.0], [-72.5, 11.5]]], "type": "Polygon"}, "id": "0", "properties": {"nome": "Bacia de Maracaibo", "tipo": "Sedimentar"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_35985c2d216162a3d4227be213fcc6a5.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["nome", "tipo"];
+    let aliases = ["nome", "tipo"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+            geo_json_35985c2d216162a3d4227be213fcc6a5.addTo(map_adeaa6b9968f3923f0a3f038cd275219);
+        
+    
+        function geo_json_a14f6e887b7cb39a7399f4f1e23fddfa_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#d62728", "fillColor": "#d62728", "fillOpacity": 0.4};
+            }
+        }
+
+        function geo_json_a14f6e887b7cb39a7399f4f1e23fddfa_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_a14f6e887b7cb39a7399f4f1e23fddfa = L.geoJson(null, {
+                onEachFeature: geo_json_a14f6e887b7cb39a7399f4f1e23fddfa_onEachFeature,
+            
+                style: geo_json_a14f6e887b7cb39a7399f4f1e23fddfa_styler,
+            ...{
+}
+        });
+
+        function geo_json_a14f6e887b7cb39a7399f4f1e23fddfa_add (data) {
+            geo_json_a14f6e887b7cb39a7399f4f1e23fddfa
+                .addData(data);
+        }
+            geo_json_a14f6e887b7cb39a7399f4f1e23fddfa_add({"bbox": [-67.0, 7.5, -62.0, 9.0], "features": [{"bbox": [-67.0, 7.5, -62.0, 9.0], "geometry": {"coordinates": [[[-67.0, 8.5], [-62.0, 9.0], [-62.0, 8.0], [-67.0, 7.5], [-67.0, 8.5]]], "type": "Polygon"}, "id": "0", "properties": {"nome": "Faixa do Orinoco", "tipo": "Heavy Oil Belt"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_a14f6e887b7cb39a7399f4f1e23fddfa.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["nome", "tipo"];
+    let aliases = ["nome", "tipo"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+            geo_json_a14f6e887b7cb39a7399f4f1e23fddfa.addTo(map_adeaa6b9968f3923f0a3f038cd275219);
+        
+    
+            var circle_marker_a21e07dad11418b96fd9933d46cf112c = L.circleMarker(
+                [11.75, -70.22],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_adeaa6b9968f3923f0a3f038cd275219);
+        
+    
+        var popup_38dda308d357f8ec2de8ee00a82d2046 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_218af8ea05d9ec3266d040d2b462663b = $(`<div id="html_218af8ea05d9ec3266d040d2b462663b" style="width: 100.0%; height: 100.0%;">Refinaria: Centro de Refinación Paraguaná (CRP)<br>Capacidade: 940 kbpd</div>`)[0];
+                popup_38dda308d357f8ec2de8ee00a82d2046.setContent(html_218af8ea05d9ec3266d040d2b462663b);
+            
+        
+
+        circle_marker_a21e07dad11418b96fd9933d46cf112c.bindPopup(popup_38dda308d357f8ec2de8ee00a82d2046)
+        ;
+
+        
+    
+    
+            var circle_marker_cb4a40ad4446ac9dfa211e619ff10632 = L.circleMarker(
+                [10.22, -64.63],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_adeaa6b9968f3923f0a3f038cd275219);
+        
+    
+        var popup_85bce6fd2ced88ac24ee7cac27ca2a05 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ddcf78aefdc0ff5c2efaa3cc991e2477 = $(`<div id="html_ddcf78aefdc0ff5c2efaa3cc991e2477" style="width: 100.0%; height: 100.0%;">Refinaria: Puerto La Cruz<br>Capacidade: 187 kbpd</div>`)[0];
+                popup_85bce6fd2ced88ac24ee7cac27ca2a05.setContent(html_ddcf78aefdc0ff5c2efaa3cc991e2477);
+            
+        
+
+        circle_marker_cb4a40ad4446ac9dfa211e619ff10632.bindPopup(popup_85bce6fd2ced88ac24ee7cac27ca2a05)
+        ;
+
+        
+    
+    
+            var circle_marker_e0d2331665be6ed3f3d31540ae9793c8 = L.circleMarker(
+                [10.48, -68.12],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_adeaa6b9968f3923f0a3f038cd275219);
+        
+    
+        var popup_981da4a460151d028846c6c0313f1ff8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_930d4a12f66f184f6aea951c6b63d20d = $(`<div id="html_930d4a12f66f184f6aea951c6b63d20d" style="width: 100.0%; height: 100.0%;">Refinaria: El Palito<br>Capacidade: 140 kbpd</div>`)[0];
+                popup_981da4a460151d028846c6c0313f1ff8.setContent(html_930d4a12f66f184f6aea951c6b63d20d);
+            
+        
+
+        circle_marker_e0d2331665be6ed3f3d31540ae9793c8.bindPopup(popup_981da4a460151d028846c6c0313f1ff8)
+        ;
+
+        
+    
+    
+        function geo_json_60d4360fc74a4bf3dd592a04dad77624_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#2ca02c", "dashArray": "5, 5", "weight": 3};
+            }
+        }
+
+        function geo_json_60d4360fc74a4bf3dd592a04dad77624_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_60d4360fc74a4bf3dd592a04dad77624 = L.geoJson(null, {
+                onEachFeature: geo_json_60d4360fc74a4bf3dd592a04dad77624_onEachFeature,
+            
+                style: geo_json_60d4360fc74a4bf3dd592a04dad77624_styler,
+            ...{
+}
+        });
+
+        function geo_json_60d4360fc74a4bf3dd592a04dad77624_add (data) {
+            geo_json_60d4360fc74a4bf3dd592a04dad77624
+                .addData(data);
+        }
+            geo_json_60d4360fc74a4bf3dd592a04dad77624_add({"bbox": [-64.63, 8.5, -64.0, 10.22], "features": [{"bbox": [-64.63, 8.5, -64.0, 10.22], "geometry": {"coordinates": [[-64.0, 8.5], [-64.63, 10.22]], "type": "LineString"}, "id": "0", "properties": {"nome": "Oleoduto Extra-Pesado", "status": "Ativo"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_60d4360fc74a4bf3dd592a04dad77624.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["nome", "status"];
+    let aliases = ["nome", "status"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+            geo_json_60d4360fc74a4bf3dd592a04dad77624.addTo(map_adeaa6b9968f3923f0a3f038cd275219);
+        
+    
+            var feature_group_69e0b7f84d1f8fddc284876706933a1d = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_c3f2a2815327b881b5ee6e5ef5a614ba = L.circle(
+                [9.15, -63.5],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2000, "stroke": true, "weight": 3}
+            ).addTo(feature_group_69e0b7f84d1f8fddc284876706933a1d);
+        
+    
+        var popup_5de9930bbe4a0f3c84dcf50eeb96bb60 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4290b4e07c28f09dc9bc7e3a852592a1 = $(`<div id="html_4290b4e07c28f09dc9bc7e3a852592a1" style="width: 100.0%; height: 100.0%;">Flaring Detectado<br>Intensidade: Alta</div>`)[0];
+                popup_5de9930bbe4a0f3c84dcf50eeb96bb60.setContent(html_4290b4e07c28f09dc9bc7e3a852592a1);
+            
+        
+
+        circle_c3f2a2815327b881b5ee6e5ef5a614ba.bindPopup(popup_5de9930bbe4a0f3c84dcf50eeb96bb60)
+        ;
+
+        
+    
+    
+            var circle_f0041430e5753aaeac52708ce30c3c1c = L.circle(
+                [9.2, -63.8],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2000, "stroke": true, "weight": 3}
+            ).addTo(feature_group_69e0b7f84d1f8fddc284876706933a1d);
+        
+    
+        var popup_a041d5e210494cf1b07d1abb1dd7caa2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_385e1119cf875be4b4bd7d203db78bd7 = $(`<div id="html_385e1119cf875be4b4bd7d203db78bd7" style="width: 100.0%; height: 100.0%;">Flaring Detectado<br>Intensidade: Media</div>`)[0];
+                popup_a041d5e210494cf1b07d1abb1dd7caa2.setContent(html_385e1119cf875be4b4bd7d203db78bd7);
+            
+        
+
+        circle_f0041430e5753aaeac52708ce30c3c1c.bindPopup(popup_a041d5e210494cf1b07d1abb1dd7caa2)
+        ;
+
+        
+    
+    
+            var circle_e3cdc31b9e9321e75da02b8a6d1d26b0 = L.circle(
+                [9.8, -63.2],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2000, "stroke": true, "weight": 3}
+            ).addTo(feature_group_69e0b7f84d1f8fddc284876706933a1d);
+        
+    
+        var popup_b1b1ee2c955eecfee95eed050215c8d2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0553af31388900a4575b8da8b517114d = $(`<div id="html_0553af31388900a4575b8da8b517114d" style="width: 100.0%; height: 100.0%;">Flaring Detectado<br>Intensidade: Alta</div>`)[0];
+                popup_b1b1ee2c955eecfee95eed050215c8d2.setContent(html_0553af31388900a4575b8da8b517114d);
+            
+        
+
+        circle_e3cdc31b9e9321e75da02b8a6d1d26b0.bindPopup(popup_b1b1ee2c955eecfee95eed050215c8d2)
+        ;
+
+        
+    
+    
+            var circle_93e54491a64683829159cc090a09da03 = L.circle(
+                [10.4, -71.5],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2000, "stroke": true, "weight": 3}
+            ).addTo(feature_group_69e0b7f84d1f8fddc284876706933a1d);
+        
+    
+        var popup_8fbeaaf1539427f6f446a4619854cae8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8a3b79a78d59e32c26212c4fa6329442 = $(`<div id="html_8a3b79a78d59e32c26212c4fa6329442" style="width: 100.0%; height: 100.0%;">Flaring Detectado<br>Intensidade: Baixa</div>`)[0];
+                popup_8fbeaaf1539427f6f446a4619854cae8.setContent(html_8a3b79a78d59e32c26212c4fa6329442);
+            
+        
+
+        circle_93e54491a64683829159cc090a09da03.bindPopup(popup_8fbeaaf1539427f6f446a4619854cae8)
+        ;
+
+        
+    
+    
+            feature_group_69e0b7f84d1f8fddc284876706933a1d.addTo(map_adeaa6b9968f3923f0a3f038cd275219);
+        
+    
+            var layer_control_94772bb828b17db7f17a844fb7a0d351_layers = {
+                base_layers : {
+                    "cartodbdarkmatter" : tile_layer_f19321da11f4322915090a6f871815c1,
+                },
+                overlays :  {
+                    "Bacia de Maracaibo" : geo_json_35985c2d216162a3d4227be213fcc6a5,
+                    "Faixa do Orinoco" : geo_json_a14f6e887b7cb39a7399f4f1e23fddfa,
+                    "Oleodutos Principais" : geo_json_60d4360fc74a4bf3dd592a04dad77624,
+                    "Monitoramento Sat\u00e9lite (Flaring)" : feature_group_69e0b7f84d1f8fddc284876706933a1d,
+                },
+            };
+            let layer_control_94772bb828b17db7f17a844fb7a0d351 = L.control.layers(
+                layer_control_94772bb828b17db7f17a844fb7a0d351_layers.base_layers,
+                layer_control_94772bb828b17db7f17a844fb7a0d351_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_adeaa6b9968f3923f0a3f038cd275219);
+
+        
+</script>
+</html>

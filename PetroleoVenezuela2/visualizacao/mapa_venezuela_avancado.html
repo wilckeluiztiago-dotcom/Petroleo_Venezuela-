@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1fa32db5fe4e6f8580c1b4cac523dfb9 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+             <h3 align="center" style="font-size:16px"><b>Venezuela Oil & Gas Intelligence Map</b></h3>
+             
+    
+     <div style="position: fixed; 
+     bottom: 50px; left: 50px; width: 150px; height: 160px; 
+     border:2px solid grey; z-index:9999; font-size:12px;
+     background-color:rgba(255, 255, 255, 0.8);
+     padding: 10px; border-radius: 5px;">
+     <b>Legenda</b><br>
+     <i style="background:#e6550d; width:10px; height:10px; display:inline-block;"></i> Campos Oil<br>
+     <i style="background:#8c564b; width:10px; height:10px; display:inline-block;"></i> Bloco Boyacá<br>
+     <i style="background:#e377c2; width:10px; height:10px; display:inline-block;"></i> Bloco Junín<br>
+     <i style="background:#bcbd22; width:10px; height:10px; display:inline-block;"></i> Bloco Ayacucho<br>
+     <i style="background:#17becf; width:10px; height:10px; display:inline-block;"></i> Bloco Carabobo<br>
+     <i class="fa fa-fire" style="color:red"></i> Refinarias<br>
+     <i class="fa fa-anchor" style="color:blue"></i> Terminais<br>
+     </div>
+     
+    
+            <div class="folium-map" id="map_1fa32db5fe4e6f8580c1b4cac523dfb9" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1fa32db5fe4e6f8580c1b4cac523dfb9 = L.map(
+                "map_1fa32db5fe4e6f8580c1b4cac523dfb9",
+                {
+                    center: [8.5, -66.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_1fa32db5fe4e6f8580c1b4cac523dfb9);
+
+            
+
+        
+    
+            var tile_layer_68cb5f88aa650c62b79b1e17cfd15174 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_68cb5f88aa650c62b79b1e17cfd15174.addTo(map_1fa32db5fe4e6f8580c1b4cac523dfb9);
+        
+    
+        function geo_json_b808f76b3a08ebe06160a6e70e5e9f19_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#215d6e", "fillColor": "#215d6e", "fillOpacity": 0.2, "weight": 1};
+            }
+        }
+
+        function geo_json_b808f76b3a08ebe06160a6e70e5e9f19_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_b808f76b3a08ebe06160a6e70e5e9f19 = L.geoJson(null, {
+                onEachFeature: geo_json_b808f76b3a08ebe06160a6e70e5e9f19_onEachFeature,
+            
+                style: geo_json_b808f76b3a08ebe06160a6e70e5e9f19_styler,
+            ...{
+}
+        });
+
+        function geo_json_b808f76b3a08ebe06160a6e70e5e9f19_add (data) {
+            geo_json_b808f76b3a08ebe06160a6e70e5e9f19
+                .addData(data);
+        }
+            geo_json_b808f76b3a08ebe06160a6e70e5e9f19_add({"bbox": [-73.5, 9.0, -70.0, 12.0], "features": [{"bbox": [-73.5, 9.0, -70.0, 12.0], "geometry": {"coordinates": [[[-73.0, 12.0], [-70.5, 12.0], [-70.0, 9.0], [-73.5, 9.0], [-73.0, 12.0]]], "type": "Polygon"}, "id": "0", "properties": {"nome": "Bacia do Lago de Maracaibo", "tipo": "Bacia Sedimentar"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_b808f76b3a08ebe06160a6e70e5e9f19.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["nome", "tipo"];
+    let aliases = ["nome", "tipo"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+            geo_json_b808f76b3a08ebe06160a6e70e5e9f19.addTo(map_1fa32db5fe4e6f8580c1b4cac523dfb9);
+        
+    
+        function geo_json_beeff966ec2c4964e0e162f33a80c6e5_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#e6550d", "fillOpacity": 0.7, "weight": 1};
+            }
+        }
+
+        function geo_json_beeff966ec2c4964e0e162f33a80c6e5_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_beeff966ec2c4964e0e162f33a80c6e5 = L.geoJson(null, {
+                onEachFeature: geo_json_beeff966ec2c4964e0e162f33a80c6e5_onEachFeature,
+            
+                style: geo_json_beeff966ec2c4964e0e162f33a80c6e5_styler,
+            ...{
+}
+        });
+
+        function geo_json_beeff966ec2c4964e0e162f33a80c6e5_add (data) {
+            geo_json_beeff966ec2c4964e0e162f33a80c6e5
+                .addData(data);
+        }
+            geo_json_beeff966ec2c4964e0e162f33a80c6e5_add({"bbox": [-71.4, 9.7, -71.1, 10.4], "features": [{"bbox": [-71.4, 10.2, -71.2, 10.4], "geometry": {"coordinates": [[[-71.4, 10.4], [-71.2, 10.4], [-71.2, 10.2], [-71.4, 10.2], [-71.4, 10.4]]], "type": "Polygon"}, "id": "0", "properties": {"nome": "Campo Tia Juana", "reservas_estimadas_gb": 15, "tipo": "Oil Field"}, "type": "Feature"}, {"bbox": [-71.35, 9.95, -71.15, 10.15], "geometry": {"coordinates": [[[-71.35, 10.15], [-71.15, 10.15], [-71.15, 9.95], [-71.35, 9.95], [-71.35, 10.15]]], "type": "Polygon"}, "id": "1", "properties": {"nome": "Campo Lagunillas", "reservas_estimadas_gb": 20, "tipo": "Oil Field"}, "type": "Feature"}, {"bbox": [-71.3, 9.7, -71.1, 9.9], "geometry": {"coordinates": [[[-71.3, 9.9], [-71.1, 9.9], [-71.1, 9.7], [-71.3, 9.7], [-71.3, 9.9]]], "type": "Polygon"}, "id": "2", "properties": {"nome": "Campo Bachaquero", "reservas_estimadas_gb": 12, "tipo": "Oil Field"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_beeff966ec2c4964e0e162f33a80c6e5.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["nome", "tipo", "reservas_estimadas_gb"];
+    let aliases = ["Campo", "Tipo", "Reservas (Gb)"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+            geo_json_beeff966ec2c4964e0e162f33a80c6e5.addTo(map_1fa32db5fe4e6f8580c1b4cac523dfb9);
+        
+    
+        function geo_json_6db5d4fed67d6026682e1428ab43a229_styler(feature) {
+            switch(feature.id) {
+                case "0": 
+                    return {"color": "white", "fillColor": "#8c564b", "fillOpacity": 0.6, "weight": 1};
+                case "1": 
+                    return {"color": "white", "fillColor": "#e377c2", "fillOpacity": 0.6, "weight": 1};
+                case "2": 
+                    return {"color": "white", "fillColor": "#bcbd22", "fillOpacity": 0.6, "weight": 1};
+                default:
+                    return {"color": "white", "fillColor": "#17becf", "fillOpacity": 0.6, "weight": 1};
+            }
+        }
+
+        function geo_json_6db5d4fed67d6026682e1428ab43a229_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_6db5d4fed67d6026682e1428ab43a229 = L.geoJson(null, {
+                onEachFeature: geo_json_6db5d4fed67d6026682e1428ab43a229_onEachFeature,
+            
+                style: geo_json_6db5d4fed67d6026682e1428ab43a229_styler,
+            ...{
+}
+        });
+
+        function geo_json_6db5d4fed67d6026682e1428ab43a229_add (data) {
+            geo_json_6db5d4fed67d6026682e1428ab43a229
+                .addData(data);
+        }
+            geo_json_6db5d4fed67d6026682e1428ab43a229_add({"bbox": [-68.0, 8.0, -62.0, 9.0], "features": [{"bbox": [-68.0, 8.0, -66.0, 9.0], "geometry": {"coordinates": [[[-68.0, 9.0], [-66.0, 9.0], [-66.0, 8.0], [-68.0, 8.0], [-68.0, 9.0]]], "type": "Polygon"}, "id": "0", "properties": {"nome": "Boyac\u00e1", "tipo": "Bloque de Producci\u00f3n"}, "type": "Feature"}, {"bbox": [-66.0, 8.0, -65.0, 9.0], "geometry": {"coordinates": [[[-66.0, 9.0], [-65.0, 9.0], [-65.0, 8.0], [-66.0, 8.0], [-66.0, 9.0]]], "type": "Polygon"}, "id": "1", "properties": {"nome": "Jun\u00edn", "tipo": "Bloque de Producci\u00f3n"}, "type": "Feature"}, {"bbox": [-65.0, 8.0, -64.0, 9.0], "geometry": {"coordinates": [[[-65.0, 9.0], [-64.0, 9.0], [-64.0, 8.0], [-65.0, 8.0], [-65.0, 9.0]]], "type": "Polygon"}, "id": "2", "properties": {"nome": "Ayacucho", "tipo": "Bloque de Producci\u00f3n"}, "type": "Feature"}, {"bbox": [-64.0, 8.0, -62.0, 9.0], "geometry": {"coordinates": [[[-64.0, 9.0], [-62.0, 9.0], [-62.0, 8.0], [-64.0, 8.0], [-64.0, 9.0]]], "type": "Polygon"}, "id": "3", "properties": {"nome": "Carabobo", "tipo": "Bloque de Producci\u00f3n"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_6db5d4fed67d6026682e1428ab43a229.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["nome", "tipo"];
+    let aliases = ["nome", "tipo"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+            geo_json_6db5d4fed67d6026682e1428ab43a229.addTo(map_1fa32db5fe4e6f8580c1b4cac523dfb9);
+        
+    
+            var feature_group_9c4ddcb1d9691c187f7e6ae021befb3d = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_3b29dc3b01db84f705e5dd88f176dd6b = L.marker(
+                [11.75, -70.22],
+                {
+}
+            ).addTo(feature_group_9c4ddcb1d9691c187f7e6ae021befb3d);
+        
+    
+            var icon_6dd56c65d6b209b6fdc934ce21a414f8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "fire",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_03613bd9d473792520730c5c6f5605e8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4e77957b229be4259f3e96f9f58c34fe = $(`<div id="html_4e77957b229be4259f3e96f9f58c34fe" style="width: 100.0%; height: 100.0%;"><b>Complexo Amuay</b><br>Tipo: Refinaria<br>Capacidade: 645 kbpd</div>`)[0];
+                popup_03613bd9d473792520730c5c6f5605e8.setContent(html_4e77957b229be4259f3e96f9f58c34fe);
+            
+        
+
+        marker_3b29dc3b01db84f705e5dd88f176dd6b.bindPopup(popup_03613bd9d473792520730c5c6f5605e8)
+        ;
+
+        
+    
+    
+                marker_3b29dc3b01db84f705e5dd88f176dd6b.setIcon(icon_6dd56c65d6b209b6fdc934ce21a414f8);
+            
+    
+            var marker_d681e16062dc66b751758dd2f4b5b00a = L.marker(
+                [11.63, -70.22],
+                {
+}
+            ).addTo(feature_group_9c4ddcb1d9691c187f7e6ae021befb3d);
+        
+    
+            var icon_1d5d2f13ab3cc73fe04ec1ab864dd0c7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "fire",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6e48bc6c5d133bd6298c1d91b6f7b3b9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c1c0b14a55f6a7fbaa138d8ea352d44f = $(`<div id="html_c1c0b14a55f6a7fbaa138d8ea352d44f" style="width: 100.0%; height: 100.0%;"><b>Complexo Cardón</b><br>Tipo: Refinaria<br>Capacidade: 310 kbpd</div>`)[0];
+                popup_6e48bc6c5d133bd6298c1d91b6f7b3b9.setContent(html_c1c0b14a55f6a7fbaa138d8ea352d44f);
+            
+        
+
+        marker_d681e16062dc66b751758dd2f4b5b00a.bindPopup(popup_6e48bc6c5d133bd6298c1d91b6f7b3b9)
+        ;
+
+        
+    
+    
+                marker_d681e16062dc66b751758dd2f4b5b00a.setIcon(icon_1d5d2f13ab3cc73fe04ec1ab864dd0c7);
+            
+    
+            var marker_9f58c4c5d91bae75bd2c77ca9320bbc0 = L.marker(
+                [10.48, -68.12],
+                {
+}
+            ).addTo(feature_group_9c4ddcb1d9691c187f7e6ae021befb3d);
+        
+    
+            var icon_6d18ab0feb0fcf7f51d5e6d4e5a5e66a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "fire",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_726020c7dc0ebe47faafbaaab9c5784a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e386504b20c3ce2af55b943d5075a435 = $(`<div id="html_e386504b20c3ce2af55b943d5075a435" style="width: 100.0%; height: 100.0%;"><b>Refinaria El Palito</b><br>Tipo: Refinaria<br>Capacidade: 140 kbpd</div>`)[0];
+                popup_726020c7dc0ebe47faafbaaab9c5784a.setContent(html_e386504b20c3ce2af55b943d5075a435);
+            
+        
+
+        marker_9f58c4c5d91bae75bd2c77ca9320bbc0.bindPopup(popup_726020c7dc0ebe47faafbaaab9c5784a)
+        ;
+
+        
+    
+    
+                marker_9f58c4c5d91bae75bd2c77ca9320bbc0.setIcon(icon_6d18ab0feb0fcf7f51d5e6d4e5a5e66a);
+            
+    
+            var marker_e03ff7d8505d3958e16d239797f82c94 = L.marker(
+                [10.22, -64.63],
+                {
+}
+            ).addTo(feature_group_9c4ddcb1d9691c187f7e6ae021befb3d);
+        
+    
+            var icon_6bb3e21b950efe412f0ab482ee2d61b8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "fire",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_842297ca8268023da18dcf1fca86d676 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_09c25d1b715abc07c45e3ba39435f8d7 = $(`<div id="html_09c25d1b715abc07c45e3ba39435f8d7" style="width: 100.0%; height: 100.0%;"><b>Refinaria Puerto La Cruz</b><br>Tipo: Refinaria<br>Capacidade: 200 kbpd</div>`)[0];
+                popup_842297ca8268023da18dcf1fca86d676.setContent(html_09c25d1b715abc07c45e3ba39435f8d7);
+            
+        
+
+        marker_e03ff7d8505d3958e16d239797f82c94.bindPopup(popup_842297ca8268023da18dcf1fca86d676)
+        ;
+
+        
+    
+    
+                marker_e03ff7d8505d3958e16d239797f82c94.setIcon(icon_6bb3e21b950efe412f0ab482ee2d61b8);
+            
+    
+            var marker_494e7b61c8e812a3e090204176174d48 = L.marker(
+                [10.1, -64.87],
+                {
+}
+            ).addTo(feature_group_9c4ddcb1d9691c187f7e6ae021befb3d);
+        
+    
+            var icon_da573dfdcdc90916859a6c621efc31f0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "anchor",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_30792bf1f59d85104a22b1c97e99699b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_72610ce27ccd851ab1508f75b6c25d30 = $(`<div id="html_72610ce27ccd851ab1508f75b6c25d30" style="width: 100.0%; height: 100.0%;"><b>Terminal José Antonio Anzoátegui</b><br>Tipo: Terminal Exportação<br>Capacidade: Export Hub</div>`)[0];
+                popup_30792bf1f59d85104a22b1c97e99699b.setContent(html_72610ce27ccd851ab1508f75b6c25d30);
+            
+        
+
+        marker_494e7b61c8e812a3e090204176174d48.bindPopup(popup_30792bf1f59d85104a22b1c97e99699b)
+        ;
+
+        
+    
+    
+                marker_494e7b61c8e812a3e090204176174d48.setIcon(icon_da573dfdcdc90916859a6c621efc31f0);
+            
+    
+            var marker_7fe54c28c9be3bb1d2777f5656f46802 = L.marker(
+                [10.5, -71.65],
+                {
+}
+            ).addTo(feature_group_9c4ddcb1d9691c187f7e6ae021befb3d);
+        
+    
+            var icon_cf62a27afe72f7ab45cae046b01a5d54 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "anchor",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f269322d363936302e1f01f230c24533 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9cf80741897216c6566a618eaab4adb0 = $(`<div id="html_9cf80741897216c6566a618eaab4adb0" style="width: 100.0%; height: 100.0%;"><b>Complexo Bajo Grande</b><br>Tipo: Terminal Gás<br>Capacidade: Gas Hub</div>`)[0];
+                popup_f269322d363936302e1f01f230c24533.setContent(html_9cf80741897216c6566a618eaab4adb0);
+            
+        
+
+        marker_7fe54c28c9be3bb1d2777f5656f46802.bindPopup(popup_f269322d363936302e1f01f230c24533)
+        ;
+
+        
+    
+    
+                marker_7fe54c28c9be3bb1d2777f5656f46802.setIcon(icon_cf62a27afe72f7ab45cae046b01a5d54);
+            
+    
+            feature_group_9c4ddcb1d9691c187f7e6ae021befb3d.addTo(map_1fa32db5fe4e6f8580c1b4cac523dfb9);
+        
+    
+        function geo_json_a63468f9a624e01bd39bb6425f403d5e_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#7f7f7f", "opacity": 0.8, "weight": 4};
+            }
+        }
+
+        function geo_json_a63468f9a624e01bd39bb6425f403d5e_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_a63468f9a624e01bd39bb6425f403d5e = L.geoJson(null, {
+                onEachFeature: geo_json_a63468f9a624e01bd39bb6425f403d5e_onEachFeature,
+            
+                style: geo_json_a63468f9a624e01bd39bb6425f403d5e_styler,
+            ...{
+}
+        });
+
+        function geo_json_a63468f9a624e01bd39bb6425f403d5e_add (data) {
+            geo_json_a63468f9a624e01bd39bb6425f403d5e
+                .addData(data);
+        }
+            geo_json_a63468f9a624e01bd39bb6425f403d5e_add({"bbox": [-71.25, 8.5, -64.0, 11.63], "features": [{"bbox": [-64.87, 8.5, -64.0, 10.1], "geometry": {"coordinates": [[-64.0, 8.5], [-64.87, 10.1]], "type": "LineString"}, "id": "0", "properties": {"nome": "Duto Orinoco-Jose", "tipo": "Oleoduto"}, "type": "Feature"}, {"bbox": [-71.25, 10.13, -70.22, 11.63], "geometry": {"coordinates": [[-71.25, 10.13], [-70.22, 11.63]], "type": "LineString"}, "id": "1", "properties": {"nome": "Duto Ul\u00e9-Amuay", "tipo": "Oleoduto"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_a63468f9a624e01bd39bb6425f403d5e.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["nome", "tipo"];
+    let aliases = ["nome", "tipo"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+            geo_json_a63468f9a624e01bd39bb6425f403d5e.addTo(map_1fa32db5fe4e6f8580c1b4cac523dfb9);
+        
+    
+            var feature_group_5d54cb01a7c506322e199410a5affdb4 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var heat_map_a01f99e942d891fe9f14e0a6f43cfc75 = L.heatLayer(
+                [[9.15, -63.5, 1.0], [9.2, -63.8, 0.5], [9.8, -63.2, 1.0], [10.4, -71.5, 0.5]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 10,
+  "radius": 15,
+  "blur": 10,
+}
+            );
+        
+    
+            heat_map_a01f99e942d891fe9f14e0a6f43cfc75.addTo(feature_group_5d54cb01a7c506322e199410a5affdb4);
+        
+    
+            var circle_marker_211b22cf1de1def93bf6026b4799a385 = L.circleMarker(
+                [9.15, -63.5],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_5d54cb01a7c506322e199410a5affdb4);
+        
+    
+        var popup_74bbc7598f38305fff163ea902060a00 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8de062785ce0bdfa4329f22858c97a90 = $(`<div id="html_8de062785ce0bdfa4329f22858c97a90" style="width: 100.0%; height: 100.0%;">Fonte de Calor Detectada (Alta)</div>`)[0];
+                popup_74bbc7598f38305fff163ea902060a00.setContent(html_8de062785ce0bdfa4329f22858c97a90);
+            
+        
+
+        circle_marker_211b22cf1de1def93bf6026b4799a385.bindPopup(popup_74bbc7598f38305fff163ea902060a00)
+        ;
+
+        
+    
+    
+            var circle_marker_baf418e70f12fd565e67289037ee0b0b = L.circleMarker(
+                [9.2, -63.8],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_5d54cb01a7c506322e199410a5affdb4);
+        
+    
+        var popup_7b21aca017afb608eac1be9bf0eee140 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_81aacc66dc13984d7759ebccc7761e88 = $(`<div id="html_81aacc66dc13984d7759ebccc7761e88" style="width: 100.0%; height: 100.0%;">Fonte de Calor Detectada (Media)</div>`)[0];
+                popup_7b21aca017afb608eac1be9bf0eee140.setContent(html_81aacc66dc13984d7759ebccc7761e88);
+            
+        
+
+        circle_marker_baf418e70f12fd565e67289037ee0b0b.bindPopup(popup_7b21aca017afb608eac1be9bf0eee140)
+        ;
+
+        
+    
+    
+            var circle_marker_0d0a8ae21e6769bfe85ccc4da7f8052a = L.circleMarker(
+                [9.8, -63.2],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_5d54cb01a7c506322e199410a5affdb4);
+        
+    
+        var popup_82663236270cdd56892fe42f6b61f5fa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_707ca201e362cb415d5acea123790941 = $(`<div id="html_707ca201e362cb415d5acea123790941" style="width: 100.0%; height: 100.0%;">Fonte de Calor Detectada (Alta)</div>`)[0];
+                popup_82663236270cdd56892fe42f6b61f5fa.setContent(html_707ca201e362cb415d5acea123790941);
+            
+        
+
+        circle_marker_0d0a8ae21e6769bfe85ccc4da7f8052a.bindPopup(popup_82663236270cdd56892fe42f6b61f5fa)
+        ;
+
+        
+    
+    
+            var circle_marker_027dbd944ad42ca72e7d2da6e02c0faa = L.circleMarker(
+                [10.4, -71.5],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_5d54cb01a7c506322e199410a5affdb4);
+        
+    
+        var popup_195eed9996d1dce83005a23adcd9a21e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_92d950edfef7bd3e66196e88650a5807 = $(`<div id="html_92d950edfef7bd3e66196e88650a5807" style="width: 100.0%; height: 100.0%;">Fonte de Calor Detectada (Baixa)</div>`)[0];
+                popup_195eed9996d1dce83005a23adcd9a21e.setContent(html_92d950edfef7bd3e66196e88650a5807);
+            
+        
+
+        circle_marker_027dbd944ad42ca72e7d2da6e02c0faa.bindPopup(popup_195eed9996d1dce83005a23adcd9a21e)
+        ;
+
+        
+    
+    
+            feature_group_5d54cb01a7c506322e199410a5affdb4.addTo(map_1fa32db5fe4e6f8580c1b4cac523dfb9);
+        
+    
+            var layer_control_151a8d8234af2a7509dd07cc7ec0cd67_layers = {
+                base_layers : {
+                    "cartodbdarkmatter" : tile_layer_68cb5f88aa650c62b79b1e17cfd15174,
+                },
+                overlays :  {
+                    "Bacias Sedimentares" : geo_json_b808f76b3a08ebe06160a6e70e5e9f19,
+                    "Campos Costeiros Bol\u00edvar" : geo_json_beeff966ec2c4964e0e162f33a80c6e5,
+                    "Faixa do Orinoco (Blocos)" : geo_json_6db5d4fed67d6026682e1428ab43a229,
+                    "Infraestrutura (Downstream)" : feature_group_9c4ddcb1d9691c187f7e6ae021befb3d,
+                    "Oleodutos Principais" : geo_json_a63468f9a624e01bd39bb6425f403d5e,
+                    "Monitoramento Sat\u00e9lite (An\u00e1lise de Flaring)" : feature_group_5d54cb01a7c506322e199410a5affdb4,
+                },
+            };
+            let layer_control_151a8d8234af2a7509dd07cc7ec0cd67 = L.control.layers(
+                layer_control_151a8d8234af2a7509dd07cc7ec0cd67_layers.base_layers,
+                layer_control_151a8d8234af2a7509dd07cc7ec0cd67_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_1fa32db5fe4e6f8580c1b4cac523dfb9);
+
+        
+</script>
+</html>
