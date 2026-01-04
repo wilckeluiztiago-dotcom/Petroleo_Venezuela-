@@ -1,7 +1,7 @@
 # Pipeline Analítico da Indústria Petrolífera na Venezuela
 
 **Autor:** Luiz Tiago Wilcke
-**Expertise:** Especialista em Geoprocessamento e Engenharia de Petróleo
+
 
 ## Visão Geral
 Este projeto implementa um pipeline analítico em Python para modelar a indústria petrolífera venezuelana. O sistema integra dados de produção, mapeamento geográfico profundo de bacias e infraestrutura, e modelagem preditiva para análise de declínio de campos maduros.
